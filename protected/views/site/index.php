@@ -2,15 +2,28 @@
 
 <h1>Welcome to <i><?php echo CHtml::encode(Yii::app()->name); ?></i></h1>
 
-<p>Congratulations! You have successfully created your Yii application.</p>
+<?php 
+$user = Yii::app()->session->get('user');
 
-<p>You may change the content of this page by modifying the following two files:</p>
-<ul>
-	<li>View file: <tt><?php echo __FILE__; ?></tt></li>
-	<li>Layout file: <tt><?php echo $this->getLayoutFile('main'); ?></tt></li>
-</ul>
+if(isset($user))
+{
+?>
+<a href="<?php echo Utilities::createAbsoluteUrl('users','index'); ?>" >Users</a> </br>
+<a href="<?php echo Utilities::createAbsoluteUrl('company','index'); ?>" >Company</a> </br>
+<a href="<?php echo Utilities::createAbsoluteUrl('products','index'); ?>" >Products</a> </br>
+<a href="<?php echo Utilities::createAbsoluteUrl('customers','index'); ?>" >Customers</a> </br>
+<a href="<?php echo Utilities::createAbsoluteUrl('purchase','index'); ?>" >Purchase</a> </br>
+<a href="<?php echo Utilities::createAbsoluteUrl('routes','index'); ?>" >Routes</a> </br>
+<a href="<?php echo Utilities::createAbsoluteUrl('sale','index'); ?>" >Sale</a> </br>
+<a href="<?php echo Utilities::createAbsoluteUrl('receipts','index'); ?>" >Receipts</a> </br>
+<a href="<?php echo Utilities::createAbsoluteUrl('expenses','index'); ?>" >Expenses</a> </br>
 
-<p>For more details on how to further develop this application, please read
-the <a href="http://www.yiiframework.com/doc/">documentation</a>.
-Feel free to ask in the <a href="http://www.yiiframework.com/forum/">forum</a>,
-should you have any questions.</p>
+<?php 	
+}
+else
+{
+?>	
+	 Please login using your credentials. <a href="/site/login">Login</a>
+<?php 	
+}
+?>

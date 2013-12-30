@@ -22,8 +22,22 @@ class UserIdentity extends CUserIdentity
 			'demo'=>'demo',
 			'admin'=>'admin',
 		);
-		if(!isset($users[$this->username]))
+		if(isset($this->username) && isset($this->password))
+		{
+			$condition = " name = '{$this->username}' AND password = md5('{$this->password}') and active = 1";
+			$record = Users::model()->find(array('condition' => $condition));
+			if(isset($record) && $record['name'] == $this->username)
+			{
+				$this->setState('user', $record['name']);
+				Yii::app()->session->add('username',$record['name']);
+				Yii::app()->session->add('user',$record);
+				$this->errorCode=self::ERROR_NONE;
+				}
+			else
 			$this->errorCode=self::ERROR_USERNAME_INVALID;
+			
+			return !$this->errorCode;
+		}	
 		else if($users[$this->username]!==$this->password)
 			$this->errorCode=self::ERROR_PASSWORD_INVALID;
 		else
