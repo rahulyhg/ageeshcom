@@ -54,7 +54,7 @@ return array(
 		            'gii/<controller:\w+>'=>'gii/<controller>',
 		            'gii/<controller:\w+>/<action:\w+>'=>'gii/<controller>/<action>',
     			'<controller:\w+>/<action:(create|view|update|delete|admin|index)>'=>'<controller>/<action>', //limited for this action(create|view|update|delete|admin|index)
-				'<controller:(company)>/<id:\w+>'=>'company/view',
+				'<controller:(company|products)>/<id:\w+>'=>'<controller>/view',
     			'<controller:\w+>/<id:\d+>'=>'<controller>/view',
 				'<controller:\w+>/<id:\d+>'=>'<controller>/view',
 				'<controller:\w+>/<action:\w+>/<id:\d+>'=>'<controller>/<action>',
