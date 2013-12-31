@@ -13,10 +13,12 @@ if(isset($user))
 <a href="<?php echo Utilities::createAbsoluteUrl('products','index'); ?>" >Products</a> </br>
 <a href="<?php echo Utilities::createAbsoluteUrl('customers','index'); ?>" >Customers</a> </br>
 <a href="<?php echo Utilities::createAbsoluteUrl('purchase','index'); ?>" >Purchase</a> </br>
+<a href="<?php echo Utilities::createAbsoluteUrl('purchaseReturn','index'); ?>" >Purchase Return</a> </br>
 <a href="<?php echo Utilities::createAbsoluteUrl('routes','index'); ?>" >Routes</a> </br>
 <a href="<?php echo Utilities::createAbsoluteUrl('sale','index'); ?>" >Sale</a> </br>
 <a href="<?php echo Utilities::createAbsoluteUrl('receipts','index'); ?>" >Receipts</a> </br>
 <a href="<?php echo Utilities::createAbsoluteUrl('expenses','index'); ?>" >Expenses</a> </br>
+<a href="<?php echo Utilities::createAbsoluteUrl('expenseTypes','index'); ?>" >Expense Types</a> </br>
 
 <?php 	
 }
