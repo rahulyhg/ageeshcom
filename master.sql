@@ -70,7 +70,7 @@
 	create table purchase(
 	id BIGINT UNIQUE NOT NULL AUTO_INCREMENT,
 	companyCode VARCHAR(10) NOT NULL,
-	purchaseBillNumber VARCHAR(50),
+	purchaseBillNumber VARCHAR(50) UNIQUE NOT NULL ,
 	amount DECIMAL(7,3),
 	discount DECIMAL(7,3),
 	billDate DATE DEFAULT'0000-00-00',
