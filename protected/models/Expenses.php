@@ -44,6 +44,7 @@ class Expenses extends CActiveRecord
 			array('expenseType', 'length', 'max'=>20),
 			array('amount', 'length', 'max'=>7),
 			array('remarks, entryDate', 'safe'),
+			array('amount', 'required'),
 			// The following rule is used by search().
 			// Please remove those attributes that should not be searched.
 			array('id, expenseType, amount, remarks, entryDate', 'safe', 'on'=>'search'),

@@ -57,6 +57,7 @@ class Customers extends CActiveRecord
 			array('pendingAmount', 'length', 'max'=>7),
 			array('routeCode', 'length', 'max'=>20),
 			array('address, remarks', 'safe'),
+			array('code,name', 'required'),
 			// The following rule is used by search().
 			// Please remove those attributes that should not be searched.
 			array('code, name, address, tin, telephone, cusType, status, pendingAmount, remarks, routeCode', 'safe', 'on'=>'search'),
@@ -89,7 +90,7 @@ class Customers extends CActiveRecord
 			'address' => 'Address',
 			'tin' => 'Tin',
 			'telephone' => 'Telephone',
-			'cusType' => 'Cus Type',
+			'cusType' => 'Type of Customer -- D- Distributor,R-Retailer,W-Wholesaler',
 			'status' => 'Status',
 			'pendingAmount' => 'Pending Amount',
 			'remarks' => 'Remarks',
