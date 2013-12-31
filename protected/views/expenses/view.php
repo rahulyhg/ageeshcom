@@ -14,7 +14,10 @@ $this->menu=array(
 ?>
 
 <h1>View Expenses #<?php echo $model->id; ?></h1>
-
+<?php 
+$expenseTypes = ExpenseTypes::model()->findByPK($model->expenseType);
+$model->expenseType =  $expenseTypes->name;
+?>
 <?php $this->widget('zii.widgets.CDetailView', array(
 	'data'=>$model,
 	'attributes'=>array(

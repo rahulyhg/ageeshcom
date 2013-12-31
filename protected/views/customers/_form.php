@@ -41,20 +41,14 @@
 
 	<div class="row">
 		<?php echo $form->labelEx($model,'cusType'); ?>
-		<?php echo $form->textField($model,'cusType',array('size'=>1,'maxlength'=>1)); ?>
+		<?php echo ZHtml::enumDropDownList( $model,'cusType' ); ?>
 		<?php echo $form->error($model,'cusType'); ?>
 	</div>
 
 	<div class="row">
 		<?php echo $form->labelEx($model,'status'); ?>
-		<?php echo $form->textField($model,'status',array('size'=>9,'maxlength'=>9)); ?>
+		<?php echo ZHtml::enumDropDownList( $model,'status' ); ?>
 		<?php echo $form->error($model,'status'); ?>
-	</div>
-
-	<div class="row">
-		<?php echo $form->labelEx($model,'pendingAmount'); ?>
-		<?php echo $form->textField($model,'pendingAmount',array('size'=>7,'maxlength'=>7)); ?>
-		<?php echo $form->error($model,'pendingAmount'); ?>
 	</div>
 
 	<div class="row">
@@ -65,7 +59,9 @@
 
 	<div class="row">
 		<?php echo $form->labelEx($model,'routeCode'); ?>
-		<?php echo $form->textField($model,'routeCode',array('size'=>20,'maxlength'=>20)); ?>
+		<?php $records = Routes::model()->findAll();
+		$list = CHtml::listData($records, 'id', 'name');
+	    echo $form->dropDownList($model, 'routeCode', CHtml::listData($records, 'id', 'name'));?>
 		<?php echo $form->error($model,'routeCode'); ?>
 	</div>
 

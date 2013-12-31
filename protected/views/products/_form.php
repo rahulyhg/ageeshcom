@@ -17,7 +17,9 @@
 
 	<div class="row">
 		<?php echo $form->labelEx($model,'companyCode'); ?>
-		<?php echo $form->textField($model,'companyCode',array('size'=>10,'maxlength'=>10)); ?>
+		<?php $records = Company::model()->findAll("status = 'active'");
+		$list = CHtml::listData($records, 'code', 'name');
+	    echo $form->dropDownList($model, 'companyCode', CHtml::listData($records, 'code', 'name'));?>
 		<?php echo $form->error($model,'companyCode'); ?>
 	</div>
 
@@ -31,12 +33,6 @@
 		<?php echo $form->labelEx($model,'name'); ?>
 		<?php echo $form->textField($model,'name',array('size'=>60,'maxlength'=>250)); ?>
 		<?php echo $form->error($model,'name'); ?>
-	</div>
-
-	<div class="row">
-		<?php echo $form->labelEx($model,'quantity'); ?>
-		<?php echo $form->textField($model,'quantity'); ?>
-		<?php echo $form->error($model,'quantity'); ?>
 	</div>
 
 	<div class="row">

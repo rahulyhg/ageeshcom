@@ -5,7 +5,11 @@
 	<br />
 
 	<b><?php echo CHtml::encode($data->getAttributeLabel('expenseType')); ?>:</b>
-	<?php echo CHtml::encode($data->expenseType); ?>
+	<?php 
+	$model = ExpenseTypes::model()->findByPK($data->expenseType);
+	echo CHtml::encode($model->name);
+	?>
+	
 	<br />
 
 	<b><?php echo CHtml::encode($data->getAttributeLabel('amount')); ?>:</b>

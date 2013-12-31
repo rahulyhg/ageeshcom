@@ -23,7 +23,7 @@
 	<script type="text/javascript" src="<?php echo Yii::app()->request->baseUrl; ?>/js/jquery.validationEngine-en.js"></script>
 	<script type="text/javascript" src="<?php echo Yii::app()->request->baseUrl; ?>/js/jquery.validationEngine.js"></script>
 	<script type="text/javascript" src="<?php echo Yii::app()->request->baseUrl; ?>/js/jquery.validationEngine.js"></script>
-	
+	<script type="text/javascript" src="<?php echo Yii::app()->request->baseUrl; ?>/js/mavachan.js"></script>
 	
 
 	<title><?php echo CHtml::encode($this->pageTitle); ?></title>
@@ -40,8 +40,10 @@
 		<?php $this->widget('zii.widgets.CMenu',array(
 			'items'=>array(
 				array('label'=>'Home', 'url'=>array('/site/index')),
-				array('label'=>'About', 'url'=>array('/site/page', 'view'=>'about')),
-				array('label'=>'Contact', 'url'=>array('/site/contact')),
+				array('label'=>'Company', 'url'=>array('/company/index')),
+				array('label'=>'Products', 'url'=>array('/products/index')),
+				array('label'=>'Customers', 'url'=>array('/customers/index')),
+				array('label'=>'Purchase', 'url'=>array('/purchase/index')),
 				array('label'=>'Login', 'url'=>array('/site/login'), 'visible'=>Yii::app()->user->isGuest),
 				array('label'=>'Logout ('.Yii::app()->user->name.')', 'url'=>array('/site/logout'), 'visible'=>!Yii::app()->user->isGuest)
 			),

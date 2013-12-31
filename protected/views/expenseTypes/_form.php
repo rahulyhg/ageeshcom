@@ -17,7 +17,7 @@
 
 	<div class="row">
 		<?php echo $form->labelEx($model,'entryDate'); ?>
-		<?php echo $form->textField($model,'entryDate'); ?>
+		<?php echo $form->textField($model,'entryDate', array('value'=>date('Y-m-d'), 'readonly' => 'true')); ?>
 		<?php echo $form->error($model,'entryDate'); ?>
 	</div>
 

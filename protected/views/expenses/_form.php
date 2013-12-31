@@ -11,7 +11,9 @@
 
 	<div class="row">
 		<?php echo $form->labelEx($model,'expenseType'); ?>
-		<?php echo $form->textField($model,'expenseType',array('size'=>20,'maxlength'=>20)); ?>
+		<?php $records = ExpenseTypes::model()->findAll();
+		$list = CHtml::listData($records, 'id', 'name');
+	    echo $form->dropDownList($model, 'expenseType', CHtml::listData($records, 'id', 'name'));?>
 		<?php echo $form->error($model,'expenseType'); ?>
 	</div>
 
@@ -29,7 +31,7 @@
 
 	<div class="row">
 		<?php echo $form->labelEx($model,'entryDate'); ?>
-		<?php echo $form->textField($model,'entryDate'); ?>
+		<?php echo $form->textField($model,'entryDate', array('value'=>date('Y-m-d'), 'readonly' => 'true')); ?>
 		<?php echo $form->error($model,'entryDate'); ?>
 	</div>
 
